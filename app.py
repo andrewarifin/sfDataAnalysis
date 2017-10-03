@@ -214,9 +214,9 @@ def generateYearRangeGraph(category):
                     )
                 ],
                 'layout': go.Layout(
-                    title='Average EUI by Construction/Renovation Year',
+                    title='Average EUI by Construction/Renovation Decade',
                     xaxis=dict(
-                        title='Construction/Renovation Year'
+                        title='Construction/Renovation Decade'
                     ),
                     yaxis=dict(
                         title='Average %s' % eui
