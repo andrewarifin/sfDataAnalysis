@@ -76,7 +76,7 @@ categories = [
     {'label': 'Offices', 'value': 'Offices'},
     {'label': 'Performance Halls', 'value': 'Performance Halls'},
     {'label': 'Libraries', 'value': 'Libraries'},
-    {'label': 'Services, Repair, and Storage', 'value': 'Services, Repair, and Storage'},
+    {'label': 'Service, Repair, and Storage', 'value': 'Service, Repair, and Storage'},
     {'label': 'Transit Stations', 'value': 'Transit Stations'},
     {'label': 'Education', 'value': 'Education'},
     {'label': 'Parking Garages', 'value': 'Parking Garages'},
