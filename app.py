@@ -3,14 +3,17 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objs as go
+from flask import Flask
+import os
 
 from dash.dependencies import Input, Output
 
 import pandas as pd
 
-app = dash.Dash()
-
-server = app.server
+server = Flask(__name__)
+server.secret_key = os.environ.get('secret_key', 'secret')
+app = dash.Dash(name = __name__, server = server)
+app.config.supress_callback_exceptions = True
 
 app.css.append_css({"external_url": "https://codepen.io/chriddyp/pen/bWLwgP.css"})
 
@@ -246,5 +249,3 @@ app.layout = html.Div([
     html.Div(id='yearTableRow', className='row'),
 ])
 
-if __name__ == '__main__':
-    app.run_server(debug=True)
