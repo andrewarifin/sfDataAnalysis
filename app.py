@@ -3,12 +3,11 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objs as go
-from flask import Flask
 import os
+import pandas as pd
 
 from dash.dependencies import Input, Output
-
-import pandas as pd
+from flask import Flask
 
 server = Flask(__name__)
 server.secret_key = os.environ.get('secret_key', 'secret')
@@ -27,7 +26,6 @@ del df['Dpt.']
 del df['ENERGY STAR Bldg Type']
 del df['2013 ENERGY STAR rating ']
 del df['2013 Building Area (sq. ft.)']
-
 
 eui = '2013 Site EUI (kBtu/sq.ft.)'
 buildingArea = '2013 Building Area (sq. ft.)'
@@ -64,6 +62,24 @@ colorPalette = [
     '#D2AF61',
     '#E9A569',
     '#F89C7B',
+]
+
+categories = [
+    {'label': 'General', 'value': 'General'},
+    {'label': 'Hospitals', 'value': 'Hospitals'},
+    {'label': 'Health & Human Services', 'value': 'Health & Human Services'},
+    {'label': 'Airport', 'value': 'Airport'},
+    {'label': 'Museums and Art', 'value': 'Museums and Art'},
+    {'label': 'Recreation Facilities', 'value': 'Recreation Facilities'},
+    {'label': 'Public Safety', 'value': 'Public Safety'},
+    {'label': 'Convention Centers', 'value': 'Convention Centers'},
+    {'label': 'Offices', 'value': 'Offices'},
+    {'label': 'Performance Halls', 'value': 'Performance Halls'},
+    {'label': 'Libraries', 'value': 'Libraries'},
+    {'label': 'Services, Repair, and Storage', 'value': 'Services, Repair, and Storage'},
+    {'label': 'Transit Stations', 'value': 'Transit Stations'},
+    {'label': 'Education', 'value': 'Education'},
+    {'label': 'Parking Garages', 'value': 'Parking Garages'},
 ]
 
 def generateGeneralGraph():
@@ -235,17 +251,9 @@ def generateTableAndChart(selectedCategory):
 app.layout = html.Div([
     dcc.Dropdown(
         id='dropdown',
-        options = [
-            {'label': 'Select a category', 'value': 'General'},
-            {'label': 'Hospitals', 'value': 'Hospitals'},
-            {'label': 'Health & Human Services', 'value': 'Health & Human Services'},
-            {'label': 'Museums and Art', 'value': 'Museums and Art'},
-            {'label': 'Recreation Facilities', 'value': 'Recreation Facilities'},
-            {'label': 'Education', 'value': 'Education'},
-        ],
+        options = categories,
         value='General'
     ),
     html.Div(id='pieBarRow', className='row'),
     html.Div(id='yearTableRow', className='row'),
 ])
-
