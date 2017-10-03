@@ -143,7 +143,7 @@ def generatePieChart(category):
                 margin=go.Margin(l=0, r=0, t=60, b=0),
             )
         }, id='pieChart')
-    ], className= '' if category == 'Hospitals' else 'six columns')
+    ], className= 'six columns')
 
 def generateCategoryBarGraph(category):
     category_df = df[df[buildingCategory].isin([category])]
@@ -234,8 +234,6 @@ def generateYearRangeGraph(category):
 def generateGraphs(selectedCategory):
     if (selectedCategory == 'General'):
         return [generateGeneralGraph()]
-    if (selectedCategory == 'Hospitals'):
-        return generatePieChart(selectedCategory)
     return [
         generatePieChart(selectedCategory),
         generateCategoryBarGraph(selectedCategory),
