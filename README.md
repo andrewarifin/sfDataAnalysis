@@ -22,5 +22,5 @@ One of the biggest issues I had with Dash was formatting. Due to my inexperience
 * Mobile support - The UI does not look good on mobile
 * Deeper analysis - With a stronger knowledge of data analytics/machine learning, I would want to be able to predict a building's EUI based of its building category, facility type, and build year.
 
-
-
+## Conclusion
+Overall, I thoroughly enjoyed this side project. It was a great introduction to data analysis as well as Jupyter Notebooks and Dash. I loved transforming a simple .csv into a beautiful web app and will definitely continue to explore more aspects of data analytics.
