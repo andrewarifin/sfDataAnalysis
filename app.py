@@ -106,6 +106,7 @@ def generateGeneralGraph():
                     yaxis=dict(
                         title=eui
                     ),
+                    margin=go.Margin(b=160)
                 )
             },
             id='generalBarGraph'
