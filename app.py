@@ -7,9 +7,6 @@ import plotly.graph_objs as go
 from dash.dependencies import Input, Output
 
 import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np
-import statsmodels.api as sm
 
 app = dash.Dash()
 
