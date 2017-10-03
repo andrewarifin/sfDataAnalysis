@@ -120,6 +120,10 @@ def generatePieChart(category):
         go.Pie(
             labels=labels,
             values=category_df[eui],
+            marker=dict(
+                colors=colorPalette,
+                line=dict(color='#000000', width=1)
+            )
         ),
     ]
 
@@ -175,6 +179,7 @@ def generateTable(category):
     if (category == 'General'):
         return None
     category_df = df[df[buildingCategory].isin([category])].head(10)
+    category_df.sort_values(eui, ascending=False, inplace=True)
     return html.Div([
         html.Table(
             [html.Tr([html.Th(col) for col in category_df.columns])] +
